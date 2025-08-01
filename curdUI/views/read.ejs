@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../public/stylesheets/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="w-full h-full bg-zinc-900 text-white">
+      <h1 class="text-2xl mt-10 p-8">Registers Users</h1>
+      <a href="/" class="m-4 text-blue-700"> <-- Go Back </a>
+    <div class=" p-5 flex flex-wrap gap-4">
+      <% user.forEach((user) => { %>
+      <div class="my-5 inline-block bg-zinc-700 p-5">
+        <p>Name: <%= user.name %></p>
+        <p>Email: <%= user.email %></p>
+        <p>Password: <%= user.password %></p>
+        <div class="flex gap-9 pt-5">
+          <a href="/edit/<%= user._id %>" class="font-bold text-gray-400">Edit</a>
+          <a href="/delete/<%= user._id %>" class="font-bold text-red-600">Delete</a>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </body>
+</html>
